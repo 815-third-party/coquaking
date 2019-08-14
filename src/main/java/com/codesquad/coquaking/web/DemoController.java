@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("POSTURL")
+@RequestMapping("/demo")
 public class DemoController {
     @Autowired
     private UserRepository userRepository;
