@@ -21,6 +21,6 @@ public class SlackController {
     public void consume(@RequestBody String json) {
         String slackId = JsonPath.read(json, "$.event.user");
         String text = JsonPath.read(json, "$.event.text");
-        scoreService.add(new TextRequestDto(slackId, text));
+        scoreService.addText(new TextRequestDto(slackId, text));
     }
 }
