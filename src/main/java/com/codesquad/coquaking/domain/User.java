@@ -1,9 +1,10 @@
 package com.codesquad.coquaking.domain;
 
-import org.springframework.data.annotation.CreatedDate;
-
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class User {
@@ -17,21 +18,13 @@ public class User {
 
     private String thumbnail;
 
-    @CreatedDate
-    private LocalDateTime createTime;
-
-
-    @Embedded
-    private Score score;
-
     private User() {
     }
 
-    public User(String slackId, String name, String thumbnail, Score score) {
+    public User(String slackId, String name, String thumbnail) {
         this.slackId = slackId;
         this.name = name;
         this.thumbnail = thumbnail;
-        this.score = score;
     }
 
     public Long getId() {
@@ -50,23 +43,16 @@ public class User {
         return thumbnail;
     }
 
-    public Score getScore() {
-        return score;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", slackId='" + slackId + '\'' +
-                ", name='" + name + '\'' +
-                ", thumbnail='" + thumbnail + '\'' +
-                ", createTime=" + createTime +
-                ", score=" + score +
-                '}';
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
