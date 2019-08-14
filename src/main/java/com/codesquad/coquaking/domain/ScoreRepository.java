@@ -10,4 +10,7 @@ import java.util.List;
 public interface ScoreRepository extends JpaRepository<Score, Long> {
     @Query(value = "select user_id from (select score.user_id, sum(text_score) as s from score group by score.user_id order by s desc) t limit 3", nativeQuery = true)
     List<Long> findTextWinner();
+
+    @Query(value = "select user_id from (select score.user_id, sum(emoji_score) as s from score group by score.user_id order by s desc) t limit 3", nativeQuery = true)
+    List<Long> findReactionWinner();
 }

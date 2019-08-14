@@ -6,7 +6,6 @@ import com.codesquad.coquaking.domain.User;
 import com.codesquad.coquaking.domain.UserRepository;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,11 +19,13 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class ReactionCollector {
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final ScoreRepository scoreRepository;
 
-    @Autowired
-    private ScoreRepository scoreRepository;
+    public ReactionCollector(UserRepository userRepository, ScoreRepository scoreRepository) {
+        this.userRepository = userRepository;
+        this.scoreRepository = scoreRepository;
+    }
 
     public void collect() {
         List<User> users = userRepository.findAll();
