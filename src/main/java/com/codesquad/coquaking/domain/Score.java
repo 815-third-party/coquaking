@@ -11,7 +11,7 @@ public class Score {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int textScore;
-    private int emojiScore;
+    private int reactionScore;
     private int bujinrunScore;
 
     @CreationTimestamp
@@ -25,10 +25,10 @@ public class Score {
     public Score() {
     }
 
-    public Score(User user, int textScore, int emojiScore, int bujinrunScore) {
+    public Score(User user, int textScore, int reactionScore, int bujinrunScore) {
         this.user = user;
         this.textScore = textScore;
-        this.emojiScore = emojiScore;
+        this.reactionScore = reactionScore;
         this.bujinrunScore = bujinrunScore;
     }
 
@@ -36,8 +36,8 @@ public class Score {
         return textScore;
     }
 
-    public int getEmojiScore() {
-        return emojiScore;
+    public int getReactionScore() {
+        return reactionScore;
     }
 
     public int getBujinrunScore() {
