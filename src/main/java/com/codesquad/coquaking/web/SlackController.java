@@ -26,6 +26,7 @@ public class SlackController {
 
     @PostMapping
     public void consume(@RequestBody String json) {
+        System.err.println(json);
         String slackId = JsonPath.read(json, "$.event.user");
         String text = JsonPath.read(json, "$.event.text");
         Score score = scoreService.addText(new TextRequestDto(slackId, text));
