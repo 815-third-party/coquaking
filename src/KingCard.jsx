@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BasicCard from './BasicCard.jsx'
 import RankCard from './RankCard.jsx'
 import styled from 'styled-components'
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 const KingCard = (props) => {
+    const [first, setFirst] = useState({});
+    const [second, setSecond] = useState({});
+    const [third, setThird] = useState({});
     const [clicked, setClicked] = useState(false);
     
     const onClickHandler = () => {
@@ -19,6 +25,7 @@ const KingCard = (props) => {
         <BasicCard data={props.data[0]} onClick = {onClickHandler}></BasicCard>
         )
     }
+    
     return (
         <DIV>
             {define()}
@@ -27,9 +34,8 @@ const KingCard = (props) => {
 }
 
 const DIV = styled.div`
-    border: 1px solid black;
-    width: 400px;
-    margin-top: 60px;
+    width: 300px;
+    margin-top: 10px;
 `
 
 export default KingCard; 

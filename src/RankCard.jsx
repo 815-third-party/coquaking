@@ -10,6 +10,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
 const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -26,25 +29,21 @@ const RankCard = (props) => {
 
     const classes = useStyles();
 
-    const randomIdGenerator = () => {
-        const randomId = Math.floor(Math.random() * 9999) + 1;
-        return randomId;
-      };
-    
     const makeLiComponent = (datas) => {
         const arr = datas.map(data => {
             return (
-                <div>
+            <Card>
+                <CardContent>
                 <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                  <Avatar alt="Remy Sharp" src={data.img} />
                 </ListItemAvatar>
                 <ListItemText
-                  primary={data} key={randomIdGenerator()}
+                  primary={data.name} key={data.id}
                 />
               </ListItem>
-              <Divider variant="inset" component="li" /> 
-              </div>
+              </CardContent>
+              </Card>
             )
         })
         return arr;

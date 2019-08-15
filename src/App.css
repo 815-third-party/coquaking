@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #d6e7fc;
 }
 
 .App-logo {
@@ -30,4 +31,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.king-name {
+  color: red;
 }
