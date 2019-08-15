@@ -31,7 +31,7 @@ public class ArchiveController {
         return result;
     }
 
-    @GetMapping("/genereate")
+    @GetMapping("/generate")
     @Transactional
     public void generate() {
         reactionCollector.collect();
