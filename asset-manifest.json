@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coquaking/static/css/main.70d1dcea.chunk.css",
+    "main.js": "/coquaking/static/js/main.80d5b476.chunk.js",
+    "main.js.map": "/coquaking/static/js/main.80d5b476.chunk.js.map",
+    "runtime~main.js": "/coquaking/static/js/runtime~main.67cd5eaa.js",
+    "runtime~main.js.map": "/coquaking/static/js/runtime~main.67cd5eaa.js.map",
+    "static/js/2.92a33bd6.chunk.js": "/coquaking/static/js/2.92a33bd6.chunk.js",
+    "static/js/2.92a33bd6.chunk.js.map": "/coquaking/static/js/2.92a33bd6.chunk.js.map",
+    "index.html": "/coquaking/index.html",
+    "precache-manifest.7d5b5e0ce594557b05653caacce6f686.js": "/coquaking/precache-manifest.7d5b5e0ce594557b05653caacce6f686.js",
+    "service-worker.js": "/coquaking/service-worker.js",
+    "static/css/main.70d1dcea.chunk.css.map": "/coquaking/static/css/main.70d1dcea.chunk.css.map"
+  }
+}
