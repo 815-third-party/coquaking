@@ -19,9 +19,9 @@ public class ScoreService {
         this.scoreRepository = scoreRepository;
     }
 
-    public void addText(TextRequestDto dto) {
+    public Score addText(TextRequestDto dto) {
         User user = userRepository.findBySlackId(dto.getSlackId()).orElseThrow(IllegalAccessError::new);
-        scoreRepository.save(new Score(user, dto.getText().length(), 0, 0));
+        return scoreRepository.save(new Score(user, dto.getText().length(), 0, 0));
     }
 
 }

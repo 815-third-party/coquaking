@@ -33,7 +33,7 @@ public class ReactionCollector {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-        value.set("token", "xoxp-242583072180-586108482449-725934559636-ff1cccc2b5294b756e5a70283928dee4");
+        value.set("token", "xoxp-242583072180-586108482449-727095593333-9b7a2bd35fcd3115001da0aa03055157");
         for (User user : users) {
             int count = 0;
             value.set("user", user.getSlackId());
