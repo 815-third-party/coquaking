@@ -34,7 +34,7 @@ public class SlackController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
         MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-        value.set("text", user + score.toString());
-        restTemplate.postForLocation("https://hooks.slack.com/services/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", value);
+        value.set("text", user.getName() + " 이(가) " + score.toString() + " 만큼 떠들고 있습니다");
+        restTemplate.postForLocation("https://hooks.slack.com/services/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", value);
     }
 }
