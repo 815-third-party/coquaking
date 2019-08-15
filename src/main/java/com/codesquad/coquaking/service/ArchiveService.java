@@ -20,7 +20,7 @@ public class ArchiveService {
     }
 
     public List<Archive> getWinner() {
-        return archiveRepository.findFirst3ByOrderByIdDesc();
+        return archiveRepository.findFirst2ByOrderByIdDesc();
     }
 
     public void addTextWinner() {
@@ -36,8 +36,7 @@ public class ArchiveService {
     private void persistArchive(Category category, List<Long> ids) {
         User first = scoreRepository.findById(ids.get(0)).orElseThrow(IllegalAccessError::new).getUser();
         User second = scoreRepository.findById(ids.get(1)).orElseThrow(IllegalAccessError::new).getUser();
-        User third = scoreRepository.findById(ids.get(2)).orElseThrow(IllegalAccessError::new).getUser();
 
-        archiveRepository.save(new Archive(category, first, second, third));
+        archiveRepository.save(new Archive(category, first, second));
     }
 }

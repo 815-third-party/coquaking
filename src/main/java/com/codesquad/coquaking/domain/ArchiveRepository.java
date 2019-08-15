@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface ArchiveRepository extends JpaRepository<Archive, Long> {
-    List<Archive> findFirst3ByOrderByIdDesc();
+    List<Archive> findFirst2ByOrderByIdDesc();
 }
