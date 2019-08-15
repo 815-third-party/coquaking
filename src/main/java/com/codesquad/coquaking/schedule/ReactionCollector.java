@@ -33,7 +33,7 @@ public class ReactionCollector {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-        value.set("token", "xoxb-242583072180-726253574133-9p8ufuLTGY4pBHQJUo26xJS8");
+        value.set("token", "xoxp-242583072180-586108482449-725934559636-ff1cccc2b5294b756e5a70283928dee4");
         for (User user : users) {
             int count = 0;
             value.set("user", user.getSlackId());
@@ -45,14 +45,14 @@ public class ReactionCollector {
             int size = JsonPath.read(stringResponse, "$.items.length()");
             for (int i = 0; i < size; i++) {
                 try {
-                    count += Integer.valueOf(JsonPath.read(stringResponse, "$.items[" + i + "].message.reactions.length()"));
+                    count += (int) JsonPath.read(stringResponse, "$.items[" + i + "].message.reactions.length()");
                     System.out.println(count);
                 } catch (PathNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
             }
             try {
-                TimeUnit.SECONDS.wait(1);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 System.err.println("interrupt");
             }

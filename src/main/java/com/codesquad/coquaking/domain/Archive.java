@@ -15,14 +15,18 @@ public class Archive {
     @OneToOne
     @JoinColumn(name = "second_user")
     private User second;
+    @OneToOne
+    @JoinColumn(name = "third_user")
+    private User third;
 
     public Archive() {
     }
 
-    public Archive(Category category, User first, User second) {
+    public Archive(Category category, User first, User second, User third) {
         this.category = category;
         this.first = first;
         this.second = second;
+        this.third = third;
     }
 
     public Category getCategory() {
@@ -35,5 +39,9 @@ public class Archive {
 
     public User getSecond() {
         return second;
+    }
+
+    public User getThird() {
+        return third;
     }
 }
